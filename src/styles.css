@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.6rem;
+}

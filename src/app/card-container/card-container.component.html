@@ -1,0 +1,6 @@
+<button (click)="shuffle()">Start</button>
+<div (click)="shuffle()" class="card-container">
+  <div *ngFor="let card of cards">
+    <app-card [card]="card"></app-card>
+  </div>
+</div>
