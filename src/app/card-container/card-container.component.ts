@@ -26,6 +26,7 @@ export class CardContainerComponent implements OnInit {
   ];
   matched: string[] = [];
   opened: number[] = [];
+  moves = 0;
   done = false;
   tick = 0;
   intervalID: any;
@@ -47,6 +48,7 @@ export class CardContainerComponent implements OnInit {
     this.done = false;
     clearInterval(this.intervalID);
     this.tick = 0;
+    this.moves = 0;
   }
 
   startTicking() {
@@ -67,6 +69,7 @@ export class CardContainerComponent implements OnInit {
     } else {
       this.closeCards(); // close cards
     }
+    this.moves += 1;
     console.log(this.matched);
   }
   openCard(index: number) {
