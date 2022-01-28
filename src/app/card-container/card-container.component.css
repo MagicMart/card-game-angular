@@ -6,3 +6,11 @@
   align-items: center;
   border: 1px solid blue;
 }
+
+.done {
+  position: absolute;
+  top: 50%;
+  height: 300px;
+  z-index: 1;
+  background: hsl(0, 0%, 50%, 50%);
+}

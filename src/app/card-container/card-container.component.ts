@@ -26,6 +26,9 @@ export class CardContainerComponent implements OnInit {
   ];
   matched: string[] = [];
   opened: number[] = [];
+  done = false;
+  tick = 0;
+  intervalID: any;
   constructor() {}
 
   ngOnInit(): void {
@@ -41,6 +44,13 @@ export class CardContainerComponent implements OnInit {
     this.cards = cardsCopy;
     this.opened = [];
     this.matched = [];
+    this.done = false;
+    clearInterval(this.intervalID);
+    this.tick = 0;
+  }
+
+  startTicking() {
+    this.intervalID = setInterval(() => (this.tick += 1), 1000);
   }
 
   closeCards() {
@@ -49,6 +59,10 @@ export class CardContainerComponent implements OnInit {
   checkCards() {
     if (this.cards[this.opened[0]] === this.cards[this.opened[1]]) {
       this.matched = [...this.matched, this.cards[this.opened[0]]];
+      if (this.matched.length === 8) {
+        clearInterval(this.intervalID);
+        this.done = true;
+      }
       setTimeout(() => (this.opened = []), 600);
     } else {
       this.closeCards(); // close cards
@@ -56,6 +70,7 @@ export class CardContainerComponent implements OnInit {
     console.log(this.matched);
   }
   openCard(index: number) {
+    if (!this.tick) this.startTicking();
     if (this.opened.length == 2) return;
     if (this.opened.includes(index)) return;
     this.opened.push(index);

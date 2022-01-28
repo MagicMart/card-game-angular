@@ -1,4 +1,5 @@
 <button (click)="reset()">Reset</button>
+<p>Secs: {{ tick }}</p>
 <div class="card-container">
   <div *ngFor="let card of cards; let i = index">
     <app-card
@@ -10,3 +11,4 @@
     ></app-card>
   </div>
 </div>
+<div *ngIf="done" class="done">GAME END</div>
