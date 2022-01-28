@@ -10,19 +10,14 @@
 }
 
 .score-panel {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   justify-content: space-between;
-  height: fit-content;
-  padding: 10px;
+  margin: 10px;
 }
 
-.score-panel p {
-  padding: 0;
-}
-
-.score-panel button {
-  padding: 0;
+p {
+  color: green;
+  font-weight: bolder;
 }
 
 .done {
