@@ -12,8 +12,9 @@
 .score-panel {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  justify-content: space-around;
+  justify-content: space-between;
   height: fit-content;
+  padding: 10px;
 }
 
 .score-panel p {

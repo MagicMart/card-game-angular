@@ -47,6 +47,7 @@ export class CardContainerComponent implements OnInit {
     this.matched = [];
     this.done = false;
     clearInterval(this.intervalID);
+    this.intervalID = null;
     this.tick = 0;
     this.moves = 0;
   }
@@ -64,6 +65,7 @@ export class CardContainerComponent implements OnInit {
       if (this.matched.length === 8) {
         console.log("Matched length", this.matched.length)
         clearInterval(this.intervalID);
+        this.intervalID = null;
         this.done = true;
       }
       setTimeout(() => (this.opened = []), 600);
@@ -74,7 +76,7 @@ export class CardContainerComponent implements OnInit {
     console.log(this.matched);
   }
   openCard(index: number) {
-    if (!this.tick) this.startTicking();
+    if (!this.intervalID) this.startTicking();
     if (this.opened.length == 2) return;
     if (this.opened.includes(index)) return;
     this.opened.push(index);
