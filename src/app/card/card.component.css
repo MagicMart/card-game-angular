@@ -4,3 +4,11 @@
   margin: 10px;
   border: 1px solid red;
 }
+
+.opened {
+  background-color: yellow;
+}
+
+.matched {
+  background-color: aqua;
+}

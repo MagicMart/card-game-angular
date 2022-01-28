@@ -1,1 +1,7 @@
-<div class="card">{{ i }}: {{ card }}</div>
+<div
+  *ngIf="opened || matched"
+  [className]="opened ? 'card opened' : 'card matched'"
+>
+  {{ card }}
+</div>
+<div *ngIf="!opened && !matched" class="card"></div>

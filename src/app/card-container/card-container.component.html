@@ -1,6 +1,12 @@
 <button (click)="shuffle()">Start</button>
 <div class="card-container">
   <div *ngFor="let card of cards; let i = index">
-    <app-card (click)="openCard(i)" [card]="card" [i]="i"></app-card>
+    <app-card
+      (click)="openCard(i)"
+      [card]="card"
+      [opened]="opened.includes(i)"
+      [matched]="matched.includes(card)"
+      [i]="i"
+    ></app-card>
   </div>
 </div>
