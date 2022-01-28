@@ -29,9 +29,9 @@ export class CardContainerComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.shuffle();
+    this.reset();
   }
-  shuffle() {
+  reset() {
     const num = () => Math.floor(Math.random() * 14); // don't pick last index
     let cardsCopy = this.cards.slice();
     for (let i = 1; i < 32; i++) {
@@ -39,6 +39,8 @@ export class CardContainerComponent implements OnInit {
       cardsCopy = [...cardsCopy, pick];
     }
     this.cards = cardsCopy;
+    this.opened = [];
+    this.matched = [];
   }
 
   closeCards() {
