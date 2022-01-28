@@ -1,6 +1,9 @@
-<button (click)="reset()">Reset</button>
-<p>Secs: {{ tick }}</p>
-<p>Moves: {{ moves }}</p>
+<div class="score-panel">
+  <button (click)="reset()">Reset</button>
+  <p>Secs: {{ tick }}</p>
+  <p>Moves: {{ moves }}</p>
+</div>
+
 <div class="card-container">
   <div *ngFor="let card of cards; let i = index">
     <app-card

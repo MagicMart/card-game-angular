@@ -2,9 +2,26 @@
   display: grid;
   grid-template-columns: repeat(4, auto);
   width: fit-content;
+  padding: 10px;
   justify-content: center;
   align-items: center;
-  border: 1px solid blue;
+  border: 1px solid red;
+  border-radius: 10%;
+}
+
+.score-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-around;
+  height: fit-content;
+}
+
+.score-panel p {
+  padding: 0;
+}
+
+.score-panel button {
+  padding: 0;
 }
 
 .done {

@@ -62,6 +62,7 @@ export class CardContainerComponent implements OnInit {
     if (this.cards[this.opened[0]] === this.cards[this.opened[1]]) {
       this.matched = [...this.matched, this.cards[this.opened[0]]];
       if (this.matched.length === 8) {
+        console.log("Matched length", this.matched.length)
         clearInterval(this.intervalID);
         this.done = true;
       }

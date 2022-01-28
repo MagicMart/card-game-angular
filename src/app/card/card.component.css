@@ -1,8 +1,9 @@
 .card {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+  width: 90px;
+  height: 90px;
+  margin: 5px;
   border: 1px solid red;
+  border-radius: 10%;
 }
 
 .opened {
