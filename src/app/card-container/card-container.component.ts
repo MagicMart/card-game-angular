@@ -83,4 +83,10 @@ export class CardContainerComponent implements OnInit {
     console.log(this.opened);
     if (this.opened.length == 2) return this.checkCards();
   }
+  getTickWithPadding() {
+    return String(this.tick).padStart(3, '0');
+  }
+  getMovesWithPadding() {
+    return String(this.moves).padStart(3, '0');
+  }
 }

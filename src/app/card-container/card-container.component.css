@@ -19,6 +19,11 @@
 p {
   color: green;
   font-weight: bolder;
+  font-size: 1.6rem;
+}
+
+.number {
+  font-size: 1.5em;
 }
 
 .done {

@@ -1,6 +1,10 @@
 <div class="score-panel">
-  <p>Moves: {{ moves }}</p>
-  <p>Secs: {{ tick }}</p>
+  <p>
+    Moves: <span class="number">{{ getMovesWithPadding() }}</span>
+  </p>
+  <p>
+    Secs: <span class="number">{{ getTickWithPadding() }}</span>
+  </p>
   <button (click)="reset()">Reset</button>
 </div>
 
