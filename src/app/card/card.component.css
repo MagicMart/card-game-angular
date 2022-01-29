@@ -6,14 +6,43 @@
   height: 100px;
   margin: 5px;
   border: 1px solid red;
-  background: gray;
   border-radius: 10%;
   font-size: 1.6rem;
   font-weight: bolder;
 }
 
+@keyframes open {
+  from {
+    background-color: gray;
+    transform: rotateY(180deg);
+  }
+  to {
+    background-color: lemonchiffon;
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes close {
+  from {
+    background-color: lemonchiffon;
+    transform: rotateY(180deg);
+  }
+  to {
+    background-color: gray;
+    transform: rotateY(0deg);
+  }
+}
+
+.closed {
+  background: gray;
+  animation-name: close;
+  animation-duration: 1s;
+}
+
 .opened {
   background-color: lemonchiffon;
+  animation-name: open;
+  animation-duration: 1s;
 }
 
 .matched {
