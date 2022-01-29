@@ -19,3 +19,10 @@
 .matched {
   background-color: #ccf085;
 }
+
+@media screen and (max-width: 450px) {
+  .card {
+    width: 60px;
+    height: 60px;
+  }
+}
