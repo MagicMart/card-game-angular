@@ -1,9 +1,14 @@
 .card {
-  width: 90px;
-  height: 90px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
   margin: 5px;
   border: 1px solid red;
   border-radius: 10%;
+  font-size: 1.6rem;
+  font-weight: bolder;
 }
 
 .opened {
