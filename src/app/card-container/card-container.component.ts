@@ -75,10 +75,11 @@ export class CardContainerComponent implements OnInit {
     this.moves += 1;
     console.log(this.matched);
   }
-  openCard(index: number) {
+  openCard(index: number, card: string) {
     if (!this.intervalID) this.startTicking();
     if (this.opened.length == 2) return;
     if (this.opened.includes(index)) return;
+    if (this.matched.includes(card)) return;
     this.opened.push(index);
     console.log(this.opened);
     if (this.opened.length == 2) return this.checkCards();
