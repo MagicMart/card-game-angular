@@ -6,15 +6,16 @@
   height: 100px;
   margin: 5px;
   border: 1px solid red;
+  background: gray;
   border-radius: 10%;
   font-size: 1.6rem;
   font-weight: bolder;
 }
 
 .opened {
-  background-color: yellow;
+  background-color: lemonchiffon;
 }
 
 .matched {
-  background-color: aqua;
+  background-color: #ccf085;
 }
