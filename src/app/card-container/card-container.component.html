@@ -9,14 +9,14 @@
 </div>
 
 <div class="card-container">
-  <div *ngFor="let card of cards; let i = index">
-    <app-card
-      (click)="openCard(i, card)"
-      [card]="card"
-      [opened]="opened.includes(i)"
-      [matched]="matched.includes(card)"
-      [i]="i"
-    ></app-card>
-  </div>
+  <app-card
+    *ngFor="let card of cards; let i = index"
+    (click)="openCard(i, card)"
+    [card]="card"
+    [opened]="opened.includes(i)"
+    [matched]="matched.includes(card)"
+    [i]="i"
+  ></app-card>
+
   <div *ngIf="done" class="done"><p>GAME END</p></div>
 </div>
