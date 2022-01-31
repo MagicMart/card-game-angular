@@ -5,7 +5,9 @@
   <p>
     Secs: <span class="number">{{ getTickWithPadding() }}</span>
   </p>
-  <button (click)="reset()">R</button>
+  <button [style]="tick ? 'background: #ff6666' : 'background: #66ff66'" (click)="reset()">
+    R
+  </button>
 </div>
 
 <div class="card-container">
