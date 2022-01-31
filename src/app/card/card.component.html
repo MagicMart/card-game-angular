@@ -1,7 +1,9 @@
 <div
-  *ngIf="opened || matched"
+  *ngIf="opened || matched; else cardClosed"
   [className]="opened ? 'card opened' : 'card matched'"
 >
   {{ card }}
 </div>
-<div *ngIf="!opened && !matched" class="card closed"></div>
+<ng-template #cardClosed>
+  <div class="card closed"></div>
+</ng-template>
