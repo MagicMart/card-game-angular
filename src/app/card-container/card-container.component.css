@@ -9,14 +9,19 @@
 
 .score-panel {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  gap: 5px;
   margin: 10px;
 }
 
-p {
+.score-panel span {
   color: green;
   font-weight: bolder;
   font-size: 1.6rem;
+}
+
+button {
+  padding: 10px;
 }
 
 .number {

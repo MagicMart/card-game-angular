@@ -2,3 +2,8 @@
   margin: 0 auto;
   width: fit-content;
 }
+
+h1 {
+  margin: 0 0 10px;
+  text-align: center;
+}
