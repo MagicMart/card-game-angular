@@ -5,7 +5,10 @@
   <p>
     Secs: <span class="number">{{ getTickWithPadding() }}</span>
   </p>
-  <button [style]="tick ? 'background: #ff6666' : 'background: #66ff66'" (click)="reset()">
+  <button
+    [style]="tick ? 'background: #ff6666' : 'background: #66ff66'"
+    (click)="reset()"
+  >
     R
   </button>
 </div>
