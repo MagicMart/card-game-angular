@@ -6,24 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-container.component.css'],
 })
 export class CardContainerComponent implements OnInit {
-  cards = [
-    'dog',
-    'cat',
-    'horse',
-    'mouse',
-    'fly',
-    'bird',
-    'snake',
-    'pig',
-    'dog',
-    'cat',
-    'horse',
-    'mouse',
-    'fly',
-    'bird',
-    'snake',
-    'pig',
-  ];
+  cards = ['dog', 'cat', 'horse', 'mouse', 'fly', 'bird', 'snake', 'pig'];
   matched: string[] = [];
   opened: number[] = [];
   moves = 0;
@@ -33,6 +16,8 @@ export class CardContainerComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    // double the cards
+    this.cards = this.cards.concat(this.cards);
     this.reset();
   }
   ngOnDestroy(): void {
