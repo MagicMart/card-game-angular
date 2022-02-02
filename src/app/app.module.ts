@@ -4,17 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CardContainerComponent } from './card-container/card-container.component';
 import { CardComponent } from './card/card.component';
+import { ZeroPadPipe } from '../zero-pad.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardContainerComponent,
-    CardComponent
+    CardComponent,
+    ZeroPadPipe,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
