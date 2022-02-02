@@ -35,6 +35,9 @@ export class CardContainerComponent implements OnInit {
   ngOnInit(): void {
     this.reset();
   }
+  ngOnDestroy(): void {
+    clearInterval(this.intervalID);
+  }
   reset() {
     const num = () => Math.floor(Math.random() * 14); // don't pick last index
     let cardsCopy = this.cards.slice();
