@@ -31,6 +31,7 @@
 
 button {
   padding: 15px;
+  border-radius: 50%;
 }
 
 .number {
