@@ -45,11 +45,13 @@ export class CardContainerComponent implements OnInit {
   }
 
   closeCards() {
-    setTimeout(() => (this.opened = []), 900);
+    setTimeout(() => (this.opened = []), 800);
   }
   checkCards() {
-    if (this.cards[this.opened[0]] === this.cards[this.opened[1]]) {
-      this.matched = [...this.matched, this.cards[this.opened[0]]];
+    const card1 = this.cards[this.opened[0]];
+    const card2 = this.cards[this.opened[1]];
+    if (card1 === card2) {
+      this.matched = [...this.matched, card1];
       if (this.matched.length === 8) {
         console.log('Matched length', this.matched.length);
         clearInterval(this.intervalID);
