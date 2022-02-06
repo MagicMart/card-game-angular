@@ -27,10 +27,10 @@ export class CardContainerComponent implements OnInit {
     const num = () => Math.floor(Math.random() * 14); // don't pick last index
     let cardsCopy = this.cards.slice();
     for (let i = 1; i < 32; i++) {
-      const pick = cardsCopy.splice(num(), 1)[0];
-      cardsCopy = [...cardsCopy, pick];
+      const pick = cardsCopy.splice(num(), 1)[0]; // take a card out
+      cardsCopy = [...cardsCopy, pick]; // and put it at the end
     }
-    this.cards = cardsCopy;
+    this.cards = cardsCopy; // update the cards
     this.opened = [];
     this.matched = [];
     this.done = false;
@@ -60,7 +60,7 @@ export class CardContainerComponent implements OnInit {
       }
       setTimeout(() => (this.opened = []), 600);
     } else {
-      this.closeCards(); // close cards
+      this.closeCards();
     }
     this.moves += 1;
     console.log(this.matched);
