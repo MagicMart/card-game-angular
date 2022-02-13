@@ -24,13 +24,16 @@ export class CardContainerComponent implements OnInit {
     clearInterval(this.intervalID);
   }
   reset() {
-    const randNum = () => Math.floor(Math.random() * 14); // don't pick last index
-    let shuffledCards = this.cards.slice(); // start with a copy
-    for (let i = 1; i < 32; i++) {
-      const pick = shuffledCards.splice(randNum(), 1)[0]; // take a card out
-      shuffledCards = [...shuffledCards, pick]; // and put it at the end
+    let cardsCopy = this.cards.slice(); // start with a copy
+
+    const newCards = [];
+    while (cardsCopy.length > 0) {
+      const randIndex = Math.floor(Math.random() * (cardsCopy.length - 1));
+      const pick = cardsCopy.splice(randIndex, 1)[0]; // pull a card out
+      newCards.push(pick);
     }
-    this.cards = shuffledCards; // update the cards that are shown
+
+    this.cards = newCards; // update the cards that are shown
     this.opened = [];
     this.matched = [];
     this.done = false;
