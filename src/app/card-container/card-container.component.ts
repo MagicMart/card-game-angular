@@ -23,17 +23,19 @@ export class CardContainerComponent implements OnInit {
   ngOnDestroy(): void {
     clearInterval(this.intervalID);
   }
-  reset() {
-    let cardsCopy = this.cards.slice(); // start with a copy
 
-    const newCards = [];
-    while (cardsCopy.length > 0) {
-      const randIndex = Math.floor(Math.random() * (cardsCopy.length - 1));
-      const pick = cardsCopy.splice(randIndex, 1)[0]; // pull a card out
-      newCards.push(pick);
+  shuffleArrayItems([...arr]: string[]): string[] {
+    const result = [];
+    while (arr.length > 0) {
+      const randIndex = Math.floor(Math.random() * (arr.length - 1));
+      const pick = arr.splice(randIndex, 1)[0]; // pull a card out
+      result.push(pick);
     }
+    return result;
+  }
 
-    this.cards = newCards; // update the cards that are shown
+  reset() {
+    this.cards = this.shuffleArrayItems(this.cards); // update the cards that are shown
     this.opened = [];
     this.matched = [];
     this.done = false;
