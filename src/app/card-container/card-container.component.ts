@@ -24,11 +24,11 @@ export class CardContainerComponent implements OnInit {
     clearInterval(this.intervalID);
   }
 
-  shuffleArrayItems([...arr]: string[]): string[] {
-    const result = [];
+  shuffleArrayItems<Type>([...arr]: Type[]): Type[] {
+    const result: Type[] = [];
     while (arr.length > 0) {
       const randIndex = Math.floor(Math.random() * (arr.length - 1));
-      const pick = arr.splice(randIndex, 1)[0]; // pull a card out
+      const pick = arr.splice(randIndex, 1)[0]; // pull an element out
       result.push(pick);
     }
     return result;
