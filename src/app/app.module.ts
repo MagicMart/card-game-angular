@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CardContainerComponent } from './card-container/card-container.component';
@@ -14,7 +14,7 @@ import { ZeroPadPipe } from '../zero-pad.pipe';
     ZeroPadPipe,
   ],
   imports: [BrowserModule],
-  providers: [],
+  providers: [Titl],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
