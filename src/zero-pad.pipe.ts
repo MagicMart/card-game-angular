@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'padStart',
 })
 export class ZeroPadPipe implements PipeTransform {
-  transform(value: number, pad: number): any {
+  transform(value: number, pad: number): string {
     return String(value).padStart(pad, '0');
   }
 }
