@@ -14,7 +14,7 @@ import { ZeroPadPipe } from '../zero-pad.pipe';
     ZeroPadPipe,
   ],
   imports: [BrowserModule],
-  providers: [Titl],
+  providers: [Title],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
