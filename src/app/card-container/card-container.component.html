@@ -1,9 +1,9 @@
 <div class="score-panel">
   <p>
-    Moves: <span class="number">{{ moves | padStart: 3 }}</span>
+    Moves: <span class="number">{{ moves | number: '3.0' }}</span>
   </p>
   <p>
-    Secs: <span class="number">{{ tick | padStart: 3 }}</span>
+    Secs: <span class="number">{{ tick | number: '3.0' }}</span>
   </p>
   <button
     [style]="tick ? 'background: #ff6666' : 'visibility: hidden'"
