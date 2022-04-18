@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-container',
   templateUrl: './card-container.component.html',
   styleUrls: ['./card-container.component.css'],
 })
-export class CardContainerComponent implements OnInit {
+export class CardContainerComponent implements OnInit, OnDestroy {
   cards = ['dog', 'cat', 'horse', 'mouse', 'fly', 'bird', 'snake', 'pig'];
   matched: string[] = [];
   opened: number[] = [];
@@ -56,7 +56,7 @@ export class CardContainerComponent implements OnInit {
     const card1 = this.cards[this.opened[0]];
     const card2 = this.cards[this.opened[1]];
     if (card1 === card2) {
-      this.matched = [...this.matched, card1];
+      this.matched.push(card1);
       if (this.matched.length === 8) {
         console.log('Matched length', this.matched.length);
         clearInterval(this.intervalID);
@@ -70,7 +70,7 @@ export class CardContainerComponent implements OnInit {
   }
   openCard(index: number, card: string) {
     if (!this.intervalID) this.startTicking();
-    if (this.opened.length == 2) return;
+    if (this.opened.length === 2) return;
     if (this.opened.includes(index)) return;
     if (this.matched.includes(card)) return;
     this.opened.push(index);
