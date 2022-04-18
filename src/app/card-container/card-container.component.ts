@@ -21,7 +21,7 @@ export class CardContainerComponent implements OnInit, OnDestroy {
     this.reset();
   }
   ngOnDestroy(): void {
-    clearInterval(this.intervalID);
+    this.stopTicking();
   }
 
   shuffleArrayItems<Type>([...arr]: Type[]): Type[] {
@@ -39,14 +39,18 @@ export class CardContainerComponent implements OnInit, OnDestroy {
     this.opened = [];
     this.matched = [];
     this.done = false;
-    clearInterval(this.intervalID);
-    this.intervalID = null;
+    this.stopTicking();
     this.tick = 0;
     this.moves = 0;
   }
 
   startTicking() {
     this.intervalID = setInterval(() => (this.tick += 1), 1000);
+  }
+
+  stopTicking() {
+    clearInterval(this.intervalID);
+    this.intervalID = null;
   }
 
   closeCards() {
@@ -57,10 +61,10 @@ export class CardContainerComponent implements OnInit, OnDestroy {
     const card2 = this.cards[this.opened[1]];
     if (card1 === card2) {
       this.matched.push(card1);
-      if (this.matched.length === 8) {
+      const allCardsMatched = this.matched.length === 8;
+      if (allCardsMatched) {
         console.log('Matched length', this.matched.length);
-        clearInterval(this.intervalID);
-        this.intervalID = null;
+        this.stopTicking();
         this.done = true;
       }
     }
