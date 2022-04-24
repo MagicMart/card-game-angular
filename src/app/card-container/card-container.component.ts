@@ -6,7 +6,24 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./card-container.component.css'],
 })
 export class CardContainerComponent implements OnInit, OnDestroy {
-  cards = ['dog', 'cat', 'horse', 'mouse', 'fly', 'bird', 'snake', 'pig'];
+  cards = [
+    'dog',
+    'cat',
+    'horse',
+    'mouse',
+    'fly',
+    'bird',
+    'snake',
+    'pig',
+    'dog',
+    'cat',
+    'horse',
+    'mouse',
+    'fly',
+    'bird',
+    'snake',
+    'pig',
+  ];
   matched: string[] = [];
   opened: number[] = [];
   moves = 0;
@@ -16,8 +33,6 @@ export class CardContainerComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit(): void {
-    // double the cards
-    this.cards = this.cards.concat(this.cards);
     this.reset();
   }
   ngOnDestroy(): void {
@@ -44,19 +59,19 @@ export class CardContainerComponent implements OnInit, OnDestroy {
     this.moves = 0;
   }
 
-  startTicking() {
+  private startTicking() {
     this.intervalID = setInterval(() => (this.tick += 1), 1000);
   }
 
-  stopTicking() {
+  private stopTicking() {
     clearInterval(this.intervalID);
-    this.intervalID = null;
+    this.intervalID = undefined;
   }
 
-  closeCards() {
+  private closeCards() {
     setTimeout(() => (this.opened = []), 800);
   }
-  checkCards() {
+  private checkCards() {
     const card1 = this.cards[this.opened[0]];
     const card2 = this.cards[this.opened[1]];
     if (card1 === card2) {
